@@ -10,10 +10,13 @@
     <%= link_to "Upload video", new_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="posts" class="min-w-full">
-    <% @posts.each do |post| %>
-      <%= render post %>
-      
-    <% end %>
+  <div class="grid grid-cols-4">
+    <div id="posts" class="min-w-full">
+      <% @posts.each do |post| %>
+        <%= render post %>
+        
+      <% end %>
+    </div>
   </div>
+
 </div>

@@ -6,6 +6,12 @@
 
     <%= video_tag @post.video , controls: true %>
 
+    <p class="font-bold"> <%= @post.title %> </p>
+
+    <p>Posted by <%= @post.user.email %> </p>
+
+    <p> Description:  <%= @post.description %> </p>
+
     <% if current_user == @post.user %>
       <%= link_to "Edit this post", edit_post_path(@post), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
       <div class="inline-block ml-2">
