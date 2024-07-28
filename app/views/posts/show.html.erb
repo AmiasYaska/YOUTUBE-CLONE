@@ -17,7 +17,6 @@
     <div class="flex items-center gap-4 ">
       <%= render 'like_button', user: current_user, post: @post %>
       
-      <%= @post.likes.count %>
     </div>
 
     <% if current_user == @post.user %>
