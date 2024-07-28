@@ -1,10 +1,12 @@
-<% if like = current_user.likes.where(post_id: post.id) %>
-    <%= link_to '#', class:"w-10 hover:text-blue-300" do %>
-        <%= render Icons::ThumpsUpComponent.new %>
-    <% end %> 
-<% else %>
-    <%= link_to '#', class:"w-10 hover:text-blue-300" do %>
-        <%= render Icons::ThumpsUpSolidComponent.new %>
+<div id="<%= dom_id(post, :like) %>">   
+    <% if like = current_user.likes.where(post_id: post.id) %>
+        <%= link_to '#', class:"w-10 hover:text-blue-300" do %>
+            <%= render Icons::ThumpsUpComponent.new %>
+        <% end %> 
+    <% else %>
+        <%= link_to post_like_path(post), class:"w-10 hover:text-blue-300", data: {turbo_method: :post} do %>
+            <%= render Icons::ThumpsUpSolidComponent.new %>
+        <% end %>
+    
     <% end %>
-  
-<% end %>
+</div>
