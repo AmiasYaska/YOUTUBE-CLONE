@@ -1,0 +1,10 @@
+<% if like = current_user.likes.where(post_id: post.id) %>
+    <%= link_to '#', class:"w-10 hover:text-blue-300" do %>
+        <%= render Icons::ThumpsUpComponent.new %>
+    <% end %> 
+<% else %>
+    <%= link_to '#', class:"w-10 hover:text-blue-300" do %>
+        <%= render Icons::ThumpsUpSolidComponent.new %>
+    <% end %>
+  
+<% end %>

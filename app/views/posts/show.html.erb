@@ -15,9 +15,7 @@
     <p>Views <%= @post.views_count %> </p>
 
     <div class="flex items-center gap-4 ">
-      <%= link_to '#', class:"w-10 hover:bg-blue-300" do %>
-        <%= render Icons::ThumpsUpComponent.new %>
-      <% end %>
+      <%= render 'like_button', user: current_user, post: @post %>
       
       <%= @post.likes.count %>
     </div>
@@ -29,7 +27,7 @@
       </div>
     <% end %>
 
-    <%= link_to "Back to home", posts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Home Page", posts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 
   </div>
 </div>
