@@ -1,7 +1,7 @@
 <div id="<%= dom_id(post, :like) %>" class="flex items-center gap-4">   
     <div class="w-10">
         <% if like = current_user.likes.where(post_id: post.id).last %>
-            <%= link_to '#', class:"hover:text-blue-300" do %>
+            <%= link_to post_like_path(post, like), class:"hover:text-blue-300", data: { turbo_method: :delete} do %>
                 <%= render Icons::ThumpsUpSolidComponent.new %>
             <% end %> 
         <% else %>

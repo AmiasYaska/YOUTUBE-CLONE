@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :posts do
     scope module: :posts do
-      resources :likes, only: [:create]
+      resources :likes, only: [:create, :destroy]
     end
   end
 
